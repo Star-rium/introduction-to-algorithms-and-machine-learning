@@ -1,4 +1,4 @@
-from short_introductory_exercises import check_if_symmetric, convert_to_numbers, convert_to_letters, get_intersection, get_union, count_characters, is_prime
+from src.short_introductory_exercises import check_if_symmetric, convert_to_numbers, convert_to_letters, get_intersection, get_union, count_characters, is_prime
 
 # All test cases goes here
 # Note to whoever cloned this repo from my github: I highly encourage you to change or add more test cases, dig deeper to each of them as i can miss some snitchy edge cases here.
