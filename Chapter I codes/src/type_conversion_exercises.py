@@ -26,14 +26,20 @@ def hexadecimal_to_decimal(string):
 	return res
 
 def decimal_to_binary(num):
+	if num == 0: # Edge case 0
+		return "0"
+
 	res = ""
 	while num > 0:
 		res += str(num%2)
 		num = num//2
 
-	return res[::-1]
+	return res[::-1] 
 
 def decimal_to_hexadecimal(num):
+	if num == 0: # Edge case 0
+		return "0"
+		
 	letter_map = {
 		10: "a",
 		11: "b",

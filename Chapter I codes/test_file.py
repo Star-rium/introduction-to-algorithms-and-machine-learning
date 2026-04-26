@@ -1,4 +1,6 @@
 from src.short_introductory_exercises import check_if_symmetric, convert_to_numbers, convert_to_letters, get_intersection, get_union, count_characters, is_prime
+from src.type_conversion_exercises import binary_to_decimal, hexadecimal_to_decimal, decimal_to_binary, decimal_to_hexadecimal, binary_to_hexadecimal, hexadecimal_to_binary
+from src.recursive_sequence import recurrence_exercise1, collatz_sequence, fibonacci_sequence, recurrence_exercise4	
 
 # All test cases goes here
 # Note to whoever cloned this repo from my github: I highly encourage you to change or add more test cases, dig deeper to each of them as i can miss some snitchy edge cases here.
@@ -12,7 +14,7 @@ tests = [
 	{
 		'function': check_if_symmetric,
 		'input': 'A man, a plan, a canal: Panama',
-		'output': False
+		'output': False # Strict, not ignoring white spaces
 	},
 	{
 		'function': check_if_symmetric,
@@ -249,6 +251,125 @@ tests = [
 		'function': is_prime,
 		'input': 77,
 		'output': False
+	},
+	# Binary to Decimal
+	{
+		'function': binary_to_decimal,
+		'input': "11010",
+		'output': 26
+	},
+	{
+		'function': binary_to_decimal,
+		'input': "0",
+		'output': 0
+	},
+	{
+		'function': binary_to_decimal,
+		'input': "11111111",
+		'output': 255
+	},
+	
+	# Hexadecimal to Decimal
+	{
+		'function': hexadecimal_to_decimal,
+		'input': "3B07F",
+		'output': 241791
+	},
+	{
+		'function': hexadecimal_to_decimal,
+		'input': "ff", # Testing lowercase handling
+		'output': 255
+	},
+	{
+		'function': hexadecimal_to_decimal,
+		'input': "0",
+		'output': 0
+	},
+
+	# Decimal to Binary
+	{
+		'function': decimal_to_binary,
+		'input': 26,
+		'output': "11010"
+	},
+	{
+		'function': decimal_to_binary,
+		'input': 0, # THIS WILL FAIL CURRENTLY! (Returns "" instead of "0")
+		'output': "0"
+	},
+
+	# Decimal to Hexadecimal
+	{
+		'function': decimal_to_hexadecimal,
+		'input': 241791,
+		'output': "3b07f" # Your function maps to lowercase, so output must match
+	},
+	{
+		'function': decimal_to_hexadecimal,
+		'input': 255,
+		'output': "ff"
+	},
+	{
+		'function': decimal_to_hexadecimal,
+		'input': 0, # THIS WILL FAIL CURRENTLY! (Returns "" instead of "0")
+		'output': "0"
+	},
+
+	# Cross Conversions
+	{
+		'function': binary_to_hexadecimal,
+		'input': "1111",
+		'output': "f"
+	},
+	{
+		'function': hexadecimal_to_binary,
+		'input': "f",
+		'output': "1111" # Your code might return this without padding, which is fine
+	},
+	# Recurrence Exercise 1 (prev * 3 - 4)
+	{
+		'function': recurrence_exercise1,
+		'input': 1, # Base case
+		'output': 5
+	},
+	{
+		'function': recurrence_exercise1,
+		'input': 3, # (5 * 3 - 4) = 11 -> (11 * 3 - 4) = 29
+		'output': 29
+	},
+
+	# Collatz Sequence (Base 25)
+	{
+		'function': collatz_sequence,
+		'input': 1, # Base case
+		'output': 25
+	},
+	{
+		'function': collatz_sequence,
+		'input': 2, # 25 is odd: 25 * 3 + 1 = 76
+		'output': 76
+	},
+	{
+		'function': collatz_sequence,
+		'input': 4, # 76 is even (38), 38 is even (19)
+		'output': 19
+	},
+
+	# Fibonacci Sequence
+	{
+		'function': fibonacci_sequence,
+		'input': 0, # Edge case
+		'output': 0
+	},
+	{
+		'function': fibonacci_sequence,
+		'input': 1, # Base case
+		'output': 1
+	},
+	{
+		'function': fibonacci_sequence,
+		'input': 9, # Standard depth test
+		'output': 34
 	}
 
 ]
