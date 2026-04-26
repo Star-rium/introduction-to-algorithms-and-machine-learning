@@ -76,4 +76,5 @@ if __name__ == '__main__':
 	#print(collatz_sequence(5))
 	#print(fibonacci_sequence(9))
 	#print(recurrence_exercise4(5))
+	pass
 
